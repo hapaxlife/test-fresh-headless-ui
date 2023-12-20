@@ -1,16 +1,11 @@
-# Fresh project
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+# Fresh project & Headless UI
 
-### Usage
+Test integration of Headless UI in a fresh project 1.6.1
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+https://headlessui.com/ (use React version)
 
-Then start the project:
+## Production
 
-```
-deno task start
-```
-
-This will watch the project directory and restart as necessary.
+In production, you need to set up https://fresh.deno.dev/docs/concepts/ahead-of-time-builds
+instead an "automatic" deploy
