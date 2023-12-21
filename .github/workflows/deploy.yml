@@ -30,4 +30,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "headlessui" 
-          entrypoint: "./main.ts" 
+          entrypoint: "./main.ts"
+          exclude: "node_modules"
