@@ -9,7 +9,14 @@ export default function App({ Component }: PageProps) {
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
-        <Component />
+        <main className="mx-auto max-w-md">
+          <h1 className="mt-5 text-center text-3xl font-bold">
+            Combobox Example
+          </h1>
+          <div className="mt-5 shadow-xl focus-within:ring-2 focus-within:ring-blue-500">
+            <Component />
+          </div>
+        </main>
       </body>
     </html>
   );

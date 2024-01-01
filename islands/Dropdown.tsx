@@ -1,6 +1,6 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from "preact/compat"
-import IconChevronDown from "tabler_icons/chevron-down.tsx"
+import IconChevronDown from "tabler_icons_tsx/chevron-down.tsx"
 
 export default function MyDropdown() {
   return (

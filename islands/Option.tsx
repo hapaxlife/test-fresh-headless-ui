@@ -1,7 +1,7 @@
 import { Fragment, useState } from "preact/compat"
 import { Listbox, Transition } from '@headlessui/react'
-import IconCheck from "tabler_icons/check.tsx"
-import IconSelector from "tabler_icons/selector.tsx"
+import IconCheck from "tabler_icons_tsx/check.tsx"
+import IconSelector from "tabler_icons_tsx/selector.tsx"
 
 
 const people = [

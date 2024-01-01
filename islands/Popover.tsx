@@ -1,5 +1,5 @@
 import { Popover, Transition } from '@headlessui/react'
-import IconSelector from "tabler_icons/selector.tsx"
+import IconSelector from "tabler_icons_tsx/selector.tsx"
 import { Fragment } from "preact/compat"
 
 const solutions = [

@@ -4,7 +4,9 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $api_person from "./routes/api/person.ts";
 import * as $index from "./routes/index.tsx";
+import * as $AsyncCombobox from "./islands/AsyncCombobox.tsx";
 import * as $Autocomplete from "./islands/Autocomplete.tsx";
 import * as $Dropdown from "./islands/Dropdown.tsx";
 import * as $Option from "./islands/Option.tsx";
@@ -16,9 +18,11 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/api/person.ts": $api_person,
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/AsyncCombobox.tsx": $AsyncCombobox,
     "./islands/Autocomplete.tsx": $Autocomplete,
     "./islands/Dropdown.tsx": $Dropdown,
     "./islands/Option.tsx": $Option,
