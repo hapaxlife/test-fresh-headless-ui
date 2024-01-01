@@ -1,7 +1,7 @@
 import { Combobox } from '@headlessui/react'
-import useSWR from "swr";
 import { Person } from "../api/persons.ts";
-import { useState } from "preact/compat";
+import { useState, useEffect } from "preact/compat";
+import { useSignal } from "@preact/signals";
 import IconSearch from "tabler_icons_tsx/search.tsx"
 
 
@@ -42,14 +42,37 @@ async function fetcher(url: string, query: string): Promise<Person[]> {
 
 const AsyncCombobox = () => {
   const [selectedPerson, setSelectedPerson] = useState<Person | undefined>(
-    undefined,
+    { id:0, name:""},
   );
   const [query, setQuery] = useState("");
-  const { data: filteredPeople, error } = useSWR(
-    ["api/person", query],
-    fetcher,
-  );
-  const isLoading = !error && !filteredPeople;
+  const filteredPeople = useSignal([ { id: 0, name: "" },])
+
+  let isLoading = true;
+
+  useEffect(() => {
+    let isSubscribed = true;
+
+    // declare the async data fetching function
+    const fetchData = async () => {
+      isLoading = true
+      const resp = await fetcher("api/person", query);
+      isLoading = false
+      if (isSubscribed) {
+        if (resp) {
+          filteredPeople.value = [...resp];
+        } else {
+          filteredPeople.value = [];
+        }
+      }
+    };
+
+    fetchData()
+      // make sure to catch any error
+      .catch(console.error);
+
+    // cancel any future `setData`
+    return () => isSubscribed = false;
+  }, [query]);
 
   return (
     <Combobox
@@ -71,7 +94,7 @@ const AsyncCombobox = () => {
       </div>
 
       <Combobox.Options>
-        {filteredPeople?.map((person) => (
+        {filteredPeople.value?.map((person) => (
           <Combobox.Option
             key={person.id}
             value={person}

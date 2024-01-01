@@ -20,7 +20,7 @@ export const handler: Handlers = {
     const url = new URL(req.url);
     const query = url.searchParams.get("q") || "";
 
-    console.log(query)
+
   
     // this logic is moved from the client
     const filteredPeople = query === "" ? people : people.filter((person) => {
