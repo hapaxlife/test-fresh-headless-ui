@@ -33,7 +33,7 @@
     "tailwindcss/plugin": "npm:/tailwindcss@3.3.5/plugin.js",
     "$std/": "https://deno.land/std@0.210.0/",
     "@headlessui/react": "https://esm.sh/*@headlessui/react@1.7.17?alias=react:preact/compat,react-dom:preact/compat,client-only:preact/compat",
-    "@headlessui/tailwindcss" : "npm:@headlessui/tailwindcss@0.2.0",
+    "@headlessui/tailwindcss" : "https://esm.sh/@headlessui/tailwindcss@0.2.0",
     "tabler_icons_tsx/" : "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/"
   },
   "compilerOptions": {

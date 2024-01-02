@@ -13,13 +13,7 @@ https://github.com/tailwindlabs/headlessui/blob/main/packages/%40headlessui-tail
 
 https://www.skies.dev/hui-combobox
 
-swr => 1.30
-
-cf https://github.com/denoland/merch/issues/36
-
-To test it launch in a new terminal
-
-deno run -A --allow-env --unstable --watch api/persons.ts
+swr => doesn't work to much error
 
 
 ## Production

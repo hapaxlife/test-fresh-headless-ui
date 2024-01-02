@@ -1,5 +1,5 @@
 import { Combobox } from '@headlessui/react'
-import { Person } from "../api/persons.ts";
+import { Person } from "../routes/api/person.ts";
 import { useState, useEffect } from "preact/compat";
 import { useSignal } from "@preact/signals";
 import IconSearch from "tabler_icons_tsx/search.tsx"
@@ -46,17 +46,18 @@ const AsyncCombobox = () => {
   );
   const [query, setQuery] = useState("");
   const filteredPeople = useSignal([ { id: 0, name: "" },])
+  const isLoading = useSignal(false);
 
-  let isLoading = true;
+  
 
   useEffect(() => {
     let isSubscribed = true;
 
     // declare the async data fetching function
     const fetchData = async () => {
-      isLoading = true
+      isLoading.value = true
       const resp = await fetcher("api/person", query);
-      isLoading = false
+      
       if (isSubscribed) {
         if (resp) {
           filteredPeople.value = [...resp];
@@ -64,11 +65,12 @@ const AsyncCombobox = () => {
           filteredPeople.value = [];
         }
       }
+      isLoading.value = false
     };
 
     fetchData()
       // make sure to catch any error
-      .catch(console.error);
+      .catch((_e) => isLoading.value = false);
 
     // cancel any future `setData`
     return () => isSubscribed = false;
@@ -90,7 +92,7 @@ const AsyncCombobox = () => {
           className={"w-full bg-gray-100 py-2 px-3 outline-none"}
           autoComplete={"off"}
         />
-        {isLoading && <LoadingSpinner />}
+        {isLoading.value && <LoadingSpinner />}
       </div>
 
       <Combobox.Options>
