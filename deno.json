@@ -21,18 +21,19 @@
     "**/_fresh/*"
   ],
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.6.1/",
+    "$fresh/": "https://deno.land/x/fresh@1.6.3/",
     "preact": "https://esm.sh/preact@10.19.3",
     "preact/": "https://esm.sh/preact@10.19.3/",
     "react": "https://esm.sh/preact@10.19.3/compat",
     "react-dom": "https://esm.sh/preact@10.19.3/compat",
+    "client-only": "https://esm.sh/preact@10.19.3/compat",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
     "tailwindcss": "npm:tailwindcss@3.3.5",
     "tailwindcss/": "npm:/tailwindcss@3.3.5/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.3.5/plugin.js",
-    "$std/": "https://deno.land/std@0.210.0/",
-    "@headlessui/react": "https://esm.sh/*@headlessui/react@1.7.17?alias=react:preact/compat,react-dom:preact/compat,client-only:preact/compat",
+    "$std/": "https://deno.land/std@0.212.0/",
+    "@headlessui/react": "https://esm.sh/@headlessui/react@1.7.18?external=react,react-dom,client-only&target=es2022",
     "@headlessui/tailwindcss" : "https://esm.sh/@headlessui/tailwindcss@0.2.0",
     "tabler_icons_tsx/" : "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/"
   },
